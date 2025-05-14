@@ -11,25 +11,6 @@ def cleanDocument(doc):
     return cleaned_text.strip()
 
 
-def models_available_llm(key:Literal["olmo","falcon","qwen","phi","llama","deepSmall","deepLarge","gpt" ,"gemma"])-> str:
-    """
-    Available are 
-    """
-    models_available = {
-    "olmo": "olmo2:13b",
-    "falcon": "falcon3:10b",
-    "qwen": "qwen2.5:14b",
-    "phi": "phi4",
-    "llama": "llama3.1",
-    "deepSmall" : "deepseek-r1:8b",
-    "deepLarge" : "deepseek-r1:14b",
-    "gpt" : "gpt-4o-mini",
-    "gemma": "gemma3:12b"
-    }
-    assert key in models_available, f"Model '{key}' not found in dictionary of available LLMs"
-    return models_available[key]
-
-
 def append_to_jsonl(file_path, data):
     """Append a new entry to a JSONL file."""
     with open(file_path, "a", encoding="utf-8") as file:
